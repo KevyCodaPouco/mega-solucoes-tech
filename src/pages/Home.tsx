@@ -19,7 +19,7 @@ const Home = () => {
         <div className="container relative z-10 mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
             Tecnologia Sob Medida para a Sua
-            <span className="block text-primary-glow">Máxima Eficiência</span>
+            <span className="block text-accent-foreground">Máxima Eficiência</span>
           </h1>
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-8 max-w-4xl mx-auto leading-relaxed">
             Fabricamos hardware e desenvolvemos soluções integradas de telecom e monitoramento 
