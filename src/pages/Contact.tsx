@@ -36,20 +36,20 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "contato@megasolucoestec.com.br",
+      content: "emily.fontes@hotmail.com",
       description: "Resposta em até 24 horas"
     },
     {
       icon: Phone,
       title: "Telefone",
-      content: "(XX) XXXX-XXXX",
+      content: "(48)99108-0375",
       description: "Seg-Sex: 8h às 18h"
     },
     {
       icon: MapPin,
       title: "Endereço",
-      content: "[Endereço da Empresa]",
-      description: "Visite nosso escritório"
+      content: "R. Tomaz Damasio Preve Neto, 153, Casa A - Forquilhas",
+      description: "São José - SC, 88107-612"
     },
     {
       icon: Clock,
@@ -210,7 +210,7 @@ const Contact = () => {
           </p>
           <Button variant="hero" size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
             <Phone className="h-5 w-5 mr-2" />
-            (XX) XXXX-XXXX
+            (48)99108-0375
           </Button>
         </div>
       </div>
