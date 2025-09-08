@@ -26,10 +26,9 @@ const Layout = () => {
             <div>
               <h3 className="font-semibold mb-4">Contato</h3>
               <div className="space-y-2 text-background/80">
-                <p>emily.fontes@hotmail.com</p>
-                <p>(48)99108-0375</p>
-                <p>R. Tomaz Damasio Preve Neto, 153, Casa A - Forquilhas
-São José - SC, 88107-612</p>
+                <p>contato@megasolucoestec.com.br</p>
+                <p>(XX) XXXX-XXXX</p>
+                <p>[Endereço da Empresa]</p>
               </div>
             </div>
             
