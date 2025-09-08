@@ -46,7 +46,7 @@ const Layout = () => {
           
           <div className="border-t border-background/20 mt-8 pt-8 text-center">
             <p className="text-background/60">
-              © 2024 MEGA SOLUÇÕES EM TECNOLOGIA LTDA. Todos os direitos reservados.
+              © 2025 MEGA SOLUÇÕES EM TECNOLOGIA LTDA. Todos os direitos reservados.
             </p>
           </div>
         </div>
