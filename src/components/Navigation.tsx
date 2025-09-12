@@ -40,9 +40,16 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
-            <Button variant="hero" size="sm" asChild>
-              <Link to="/contato">Falar com Especialista</Link>
-            </Button>
+            <div className="flex items-center gap-3">
+              <Button variant="outline" size="sm" asChild>
+                <a href="http://15.228.236.17:3000/login" target="_blank" rel="noopener noreferrer">
+                  Área do Cliente
+                </a>
+              </Button>
+              <Button variant="hero" size="sm" asChild>
+                <Link to="/contato">Falar com Especialista</Link>
+              </Button>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -72,11 +79,18 @@ const Navigation = () => {
                   {item.label}
                 </Link>
               ))}
-              <Button variant="hero" size="sm" asChild className="w-fit">
-                <Link to="/contato" onClick={() => setIsOpen(false)}>
-                  Falar com Especialista
-                </Link>
-              </Button>
+              <div className="flex flex-col gap-3">
+                <Button variant="outline" size="sm" asChild className="w-fit">
+                  <a href="http://15.228.236.17:3000/login" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
+                    Área do Cliente
+                  </a>
+                </Button>
+                <Button variant="hero" size="sm" asChild className="w-fit">
+                  <Link to="/contato" onClick={() => setIsOpen(false)}>
+                    Falar com Especialista
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         )}
