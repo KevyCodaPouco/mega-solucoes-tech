@@ -16,7 +16,7 @@ const Layout = () => {
                 <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                   <span className="text-primary-foreground font-bold text-sm">M</span>
                 </div>
-                <span className="font-bold text-lg">MEGA SOLUÇÕES</span>
+                <span className="font-bold text-lg text-muted-foreground">MEGA SOLUÇÕES</span>
               </div>
               <p className="text-muted-foreground leading-relaxed">
                 Especialistas em soluções tecnológicas customizadas para o mercado brasileiro.
@@ -24,7 +24,7 @@ const Layout = () => {
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Contato</h3>
+              <h3 className="font-semibold mb-4 text-muted-foreground">Contato</h3>
               <div className="space-y-2 text-muted-foreground">
                 <p>emily.fontes@hotmail.com</p>
                 <p>(48)99108-0375</p>
@@ -34,7 +34,7 @@ const Layout = () => {
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Soluções</h3>
+              <h3 className="font-semibold mb-4 text-muted-foreground">Soluções</h3>
               <div className="space-y-2 text-muted-foreground">
                 <p>Manufatura de Equipamentos</p>
                 <p>Soluções Tecnológicas</p>
