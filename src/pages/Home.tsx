@@ -97,12 +97,20 @@ const Home = () => {
           <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Fale com nossos especialistas e descubra como podemos otimizar sua infraestrutura tecnológica.
           </p>
-          <Button variant="hero" size="lg" asChild className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-            <Link to="/contato" className="flex items-center gap-2">
-              Falar com Especialista
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button variant="hero" size="lg" asChild className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
+              <Link to="/contato" className="flex items-center gap-2">
+                Falar com Especialista
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <a href="http://192.168.1.100" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                Área do Cliente
+                <ArrowRight className="h-5 w-5" />
+              </a>
+            </Button>
+          </div>
         </div>
       </section>
     </div>
