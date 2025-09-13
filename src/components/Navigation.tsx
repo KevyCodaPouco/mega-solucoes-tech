@@ -12,6 +12,7 @@ const Navigation = () => {
   const navItems = [
     { path: "/", label: "Início" },
     { path: "/solucoes", label: "Soluções" },
+    { path: "/portfolio", label: "Portfólio" },
     { path: "/sobre", label: "Sobre Nós" },
     { path: "/contato", label: "Contato" },
   ];
