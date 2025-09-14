@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 const Portfolio = () => {
   const projects = [
@@ -7,42 +8,66 @@ const Portfolio = () => {
       id: 1,
       title: "Sistema de Automação Industrial",
       category: "Manufatura",
-      image: "/api/placeholder/400/300",
+      images: [
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/301",
+        "/api/placeholder/400/302"
+      ],
       description: "Implementação de sistema automatizado para linha de produção"
     },
     {
       id: 2,
       title: "Rede de Telecomunicações Corporativa",
       category: "Telecomunicações",
-      image: "/api/placeholder/400/300",
+      images: [
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/301",
+        "/api/placeholder/400/302"
+      ],
       description: "Infraestrutura completa de telecomunicações para empresa multinacional"
     },
     {
       id: 3,
       title: "Monitoramento de Temperatura em Data Center",
       category: "Monitoramento",
-      image: "/api/placeholder/400/300",
+      images: [
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/301",
+        "/api/placeholder/400/302"
+      ],
       description: "Sistema de monitoramento em tempo real com alertas automatizados"
     },
     {
       id: 4,
       title: "Solução IoT para Agricultura",
       category: "Tecnologia",
-      image: "/api/placeholder/400/300",
+      images: [
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/301",
+        "/api/placeholder/400/302"
+      ],
       description: "Sensores inteligentes para otimização de irrigação e cultivo"
     },
     {
       id: 5,
       title: "Equipamento de Teste Automatizado",
       category: "Manufatura",
-      image: "/api/placeholder/400/300",
+      images: [
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/301",
+        "/api/placeholder/400/302"
+      ],
       description: "Desenvolvimento de equipamento personalizado para testes de qualidade"
     },
     {
       id: 6,
       title: "Sistema de Energia Solar Monitorado",
       category: "Energia",
-      image: "/api/placeholder/400/300",
+      images: [
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/301",
+        "/api/placeholder/400/302"
+      ],
       description: "Instalação com sistema de monitoramento de performance em tempo real"
     }
   ];
@@ -86,15 +111,27 @@ const Portfolio = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <Card key={project.id} className="group overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer">
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative">
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {project.images.map((image, index) => (
+                        <CarouselItem key={index}>
+                          <div className="relative overflow-hidden">
+                            <img 
+                              src={image} 
+                              alt={`${project.title} - Imagem ${index + 1}`}
+                              className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-2" />
+                    <CarouselNext className="right-2" />
+                  </Carousel>
                   <Badge 
-                    className="absolute top-4 left-4 bg-primary text-primary-foreground"
+                    className="absolute top-4 left-4 bg-primary text-primary-foreground z-10"
                   >
                     {project.category}
                   </Badge>
