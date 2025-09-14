@@ -43,7 +43,7 @@ const Navigation = () => {
             ))}
             <div className="flex items-center gap-3">
               <Button variant="outline" size="sm" asChild className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <a href="http://15.228.236.17:3000/login" target="_blank" rel="noopener noreferrer">
+                <a href="http://18.231.1.78:3000" target="_blank" rel="noopener noreferrer">
                   Área do Cliente
                 </a>
               </Button>
@@ -82,7 +82,7 @@ const Navigation = () => {
               ))}
               <div className="flex flex-col gap-3">
                 <Button variant="outline" size="sm" asChild className="w-fit text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                  <a href="http://15.228.236.17:3000/login" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
+                  <a href="http://18.231.1.78:3000" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>
                     Área do Cliente
                   </a>
                 </Button>
