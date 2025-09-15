@@ -25,7 +25,7 @@ const Navigation = () => {
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-bold text-sm">M</span>
             </div>
-            <span className="font-bold text-lg text-foreground">MEGA SOLUÇÕES</span>
+            <span className="font-bold text-lg text-foreground">Mega Soluções Tecnológicas</span>
           </Link>
 
           {/* Desktop Navigation */}

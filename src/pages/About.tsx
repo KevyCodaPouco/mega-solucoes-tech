@@ -46,7 +46,7 @@ const About = () => {
             <h2 className="text-3xl font-bold text-foreground mb-6">Nossa História</h2>
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <p>
-                A <strong className="text-foreground">MEGA SOLUÇÕES EM TECNOLOGIA</strong> nasceu da missão de 
+                A <strong className="text-foreground">Mega Soluções Tecnológicas</strong> nasceu da missão de 
                 oferecer ao mercado uma infraestrutura tecnológica de ponta, 100% brasileira. 
                 Desde nossa fundação, temos o compromisso de desenvolver soluções que atendam 
                 às necessidades específicas do mercado nacional.

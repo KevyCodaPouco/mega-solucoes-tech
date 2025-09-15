@@ -16,7 +16,7 @@ const Layout = () => {
                 <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
                   <span className="text-primary-foreground font-bold text-sm">M</span>
                 </div>
-                <span className="font-bold text-lg text-muted-foreground">MEGA SOLUÇÕES</span>
+                <span className="font-bold text-lg text-muted-foreground">Mega Soluções Tecnológicas</span>
               </div>
               <p className="text-muted-foreground leading-relaxed">
                 Especialistas em soluções tecnológicas customizadas para o mercado brasileiro.
@@ -46,7 +46,7 @@ const Layout = () => {
           
           <div className="border-t border-border mt-8 pt-8 text-center">
             <p className="text-muted-foreground">
-              © 2025 MEGA SOLUÇÕES EM TECNOLOGIA LTDA. Todos os direitos reservados.
+              © 2025 Mega Soluções Tecnológicas LTDA. Todos os direitos reservados.
             </p>
           </div>
         </div>

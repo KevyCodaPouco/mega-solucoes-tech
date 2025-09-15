@@ -175,7 +175,7 @@ const Contact = () => {
             <Card className="shadow-card border-0 bg-gradient-subtle">
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Por que escolher a MEGA SOLUÇÕES?
+                  Por que escolher a Mega Soluções Tecnológicas?
                 </h3>
                 <ul className="space-y-3 text-muted-foreground">
                   <li className="flex items-center gap-2">
