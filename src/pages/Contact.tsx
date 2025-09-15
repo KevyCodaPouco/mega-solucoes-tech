@@ -41,9 +41,10 @@ const Contact = () => {
     },
     {
       icon: Phone,
-      title: "Telefone",
+      title: "WhatsApp",
       content: "(48)99108-0375",
-      description: "Seg-Sex: 8h às 18h"
+      description: "Fale conosco agora",
+      isWhatsApp: true
     },
     {
       icon: MapPin,
@@ -160,9 +161,17 @@ const Contact = () => {
                       <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
                         <info.icon className="h-6 w-6 text-primary-foreground" />
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <h3 className="text-lg font-semibold text-foreground mb-1">{info.title}</h3>
-                        <p className="text-foreground font-medium">{info.content}</p>
+                        {info.isWhatsApp ? (
+                          <Button asChild variant="ghost" className="p-0 h-auto font-medium text-foreground hover:text-primary">
+                            <a href="https://wa.me/5548991080375" target="_blank" rel="noopener noreferrer">
+                              {info.content}
+                            </a>
+                          </Button>
+                        ) : (
+                          <p className="text-foreground font-medium">{info.content}</p>
+                        )}
                         <p className="text-muted-foreground text-sm">{info.description}</p>
                       </div>
                     </div>
@@ -208,9 +217,11 @@ const Contact = () => {
           <p className="text-xl text-primary-foreground/90 mb-6">
             Para casos urgentes, entre em contato diretamente conosco por telefone.
           </p>
-          <Button variant="hero" size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-            <Phone className="h-5 w-5 mr-2" />
-            (48)99108-0375
+          <Button variant="hero" size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90" asChild>
+            <a href="https://wa.me/5548991080375" target="_blank" rel="noopener noreferrer">
+              <Phone className="h-5 w-5 mr-2" />
+              (48)99108-0375
+            </a>
           </Button>
         </div>
       </div>
