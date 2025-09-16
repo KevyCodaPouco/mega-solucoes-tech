@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import { supabase } from "@/lib/supabase"; // A importação está aqui
+import { supabase } from "@/lib/supabase"; 
 
 const Contact = () => {
   // A definição do formData precisa estar aqui
