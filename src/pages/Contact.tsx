@@ -5,49 +5,54 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Clock, Loader2 } from "lucide-react";
-import { submitContactForm, type ContactFormData } from "@/lib/supabase";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { supabase } from "@/lib/supabase"; // A importação está aqui
 
 const Contact = () => {
-  const [formData, setFormData] = useState<ContactFormData>({
+  // A definição do formData precisa estar aqui
+  const [formData, setFormData] = useState({
     nome: "",
     empresa: "",
     email: "",
     mensagem: ""
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      await submitContactForm(formData);
-      
-      toast({
-        title: "Mensagem enviada com sucesso!",
-        description: "Recebemos sua mensagem e nossa equipe entrará em contato em breve. Obrigado pelo interesse!",
-      });
-      
-      setFormData({ nome: "", empresa: "", email: "", mensagem: "" });
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      toast({
-        title: "Erro ao enviar mensagem",
-        description: "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente ou entre em contato diretamente conosco.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
+  // A função para lidar com a mudança nos inputs
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  // A nova função handleSubmit que envia os dados
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const { data, error } = await supabase.functions.invoke('send-contact-email', {
+      body: formData,
+    });
+
+    setIsSubmitting(false);
+
+    if (error) {
+      console.error("Erro ao enviar mensagem:", error);
+      toast({
+        variant: "destructive",
+        title: "Erro ao enviar a mensagem.",
+        description: "Houve um problema. Por favor, tente novamente mais tarde.",
+      });
+    } else {
+      toast({
+        title: "Mensagem enviada!",
+        description: "Entraremos em contato em breve. Obrigado pelo interesse!",
+      });
+      setFormData({ nome: "", empresa: "", email: "", mensagem: "" });
+    }
   };
 
   const contactInfo = [
@@ -150,22 +155,16 @@ const Contact = () => {
                     />
                   </div>
                   
+                  {/* Botão de envio atualizado */}
                   <Button type="submit" variant="hero" size="lg" className="w-full" disabled={isSubmitting}>
-                    {isSubmitting ? (
-                      <>
-                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
-                        Enviando...
-                      </>
-                    ) : (
-                      "Enviar Mensagem"
-                    )}
+                    {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
                   </Button>
                 </form>
               </CardContent>
             </Card>
           </div>
-
-          {/* Contact Information */}
+          
+          {/* ... o resto do seu código da página de contato continua aqui sem alterações ... */}
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl font-bold text-foreground mb-6">
@@ -176,7 +175,6 @@ const Contact = () => {
                 ou preencha o formulário ao lado. Nossa equipe responderá o mais breve possível.
               </p>
             </div>
-
             <div className="grid gap-6">
               {contactInfo.map((info, index) => (
                 <Card key={index} className="shadow-card hover:shadow-elegant transition-all duration-300 border-0">
@@ -195,50 +193,7 @@ const Contact = () => {
                 </Card>
               ))}
             </div>
-
-            {/* Additional Info */}
-            <Card className="shadow-card border-0 bg-gradient-subtle">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Por que escolher a Mega Soluções Tecnológicas?
-                </h3>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    Consulta gratuita para análise das suas necessidades
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    Propostas técnicas detalhadas e personalizadas
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    Suporte técnico local e especializado
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    Garantia e manutenção de todos os equipamentos
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
           </div>
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center mt-16 p-8 bg-primary rounded-2xl">
-          <h2 className="text-3xl font-bold text-primary-foreground mb-4">
-            Precisa de uma Solução Urgente?
-          </h2>
-          <p className="text-xl text-primary-foreground/90 mb-6">
-            Para casos urgentes, entre em contato diretamente conosco pelo WhatsApp.
-          </p>
-          <Button variant="hero" size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90" asChild>
-            <a href="https://wa.me/5548991080375" target="_blank" rel="noopener noreferrer">
-              <Phone className="h-5 w-5 mr-2" />
-              Falar no WhatsApp
-            </a>
-          </Button>
         </div>
       </div>
     </div>
