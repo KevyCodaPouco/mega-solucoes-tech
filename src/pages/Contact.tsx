@@ -5,24 +5,42 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Loader2 } from "lucide-react";
+import { submitContactForm, type ContactFormData } from "@/lib/supabase";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     nome: "",
     empresa: "",
     email: "",
     mensagem: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve. Obrigado pelo interesse!",
-    });
-    setFormData({ nome: "", empresa: "", email: "", mensagem: "" });
+    setIsSubmitting(true);
+
+    try {
+      await submitContactForm(formData);
+      
+      toast({
+        title: "Mensagem enviada com sucesso!",
+        description: "Recebemos sua mensagem e nossa equipe entrará em contato em breve. Obrigado pelo interesse!",
+      });
+      
+      setFormData({ nome: "", empresa: "", email: "", mensagem: "" });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente ou entre em contato diretamente conosco.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -132,8 +150,15 @@ const Contact = () => {
                     />
                   </div>
                   
-                  <Button type="submit" variant="hero" size="lg" className="w-full">
-                    Enviar Mensagem
+                  <Button type="submit" variant="hero" size="lg" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                        Enviando...
+                      </>
+                    ) : (
+                      "Enviar Mensagem"
+                    )}
                   </Button>
                 </form>
               </CardContent>
