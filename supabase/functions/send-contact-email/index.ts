@@ -1,20 +1,17 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import { Nodemailer } from "https://deno.land/x/nodemailer/mod.ts";
+import nodemailer from "npm:nodemailer";
 
-// Headers de CORS
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
 serve(async (req) => {
-  // Lida com a preflight request
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders });
   }
 
   try {
-    // Pega as variáveis de ambiente (os secrets do Supabase)
     const GMAIL_USER = Deno.env.get('GMAIL_USER');
     const GMAIL_APP_PASSWORD = Deno.env.get('GMAIL_APP_PASSWORD');
 
@@ -22,33 +19,29 @@ serve(async (req) => {
       throw new Error('As variáveis de ambiente do Gmail não foram configuradas.');
     }
 
-    // Pega os dados do formulário
     const { nome, empresa, email, mensagem } = await req.json();
 
-    // Configura o "transportador" do Nodemailer
-    const transporter = new Nodemailer({
+    const transporter = nodemailer.createTransport({
       hostname: "smtp.gmail.com",
       port: 587,
-      secure: false, // true for 465, false for other ports
+      secure: false,
       auth: {
         user: GMAIL_USER,
         pass: GMAIL_APP_PASSWORD,
       },
     });
 
-    // Monta o e-mail
     const mailOptions = {
-      from: `"${nome} - Site" <${GMAIL_USER}>`, // Remetente
-      to: 'kevyoliveira@hotmail.com', // O e-mail que vai receber a mensagem
+      from: `"${nome} - Site" <${GMAIL_USER}>`,
+      to: 'kevyoliveira@hotmail.com',
       subject: `Nova mensagem de ${nome} (${empresa})`,
       html: `<p><strong>Nome:</strong> ${nome}</p>
              <p><strong>Empresa:</strong> ${empresa}</p>
              <p><strong>Email do remetente:</strong> ${email}</p>
              <p><strong>Mensagem:</strong> ${mensagem}</p>`,
-      replyTo: email // Para que você possa responder diretamente para o usuário
+      replyTo: email
     };
-    
-    // Envia o e-mail
+
     const info = await transporter.sendMail(mailOptions);
 
     return new Response(JSON.stringify(info), {
