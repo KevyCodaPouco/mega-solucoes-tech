@@ -47,7 +47,7 @@ serve(async (req) => {
              <p><strong>Mensagem:</strong> ${mensagem}</p>`,
       replyTo: email // Para que você possa responder diretamente para o usuário
     };
-
+    
     // Envia o e-mail
     const info = await transporter.sendMail(mailOptions);
 
