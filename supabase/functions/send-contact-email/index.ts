@@ -21,7 +21,7 @@ serve(async (req) => {
     const { nome, empresa, email, mensagem } = await req.json();
 
     const { data, error } = await resend.emails.send({
-      to: 'kevyoliveira@hotmail.com',
+      to: 'k3vy0liveira@gmail.com',
       from: 'Contato Site <contato@megasoluções.com>', 
       subject: `Nova mensagem de ${nome} (${empresa})`,
       html: `<p><strong>Nome:</strong> ${nome}</p>
