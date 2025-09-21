@@ -32,8 +32,8 @@ serve(async (req) => {
     });
 
     const mailOptions = {
-      from: `"${nome} - Site" <${GMAIL_USER}>`,
-      to: 'kevyoliveira@hotmail.com',
+      from: `"${nome} - Formulário do Site" <${GMAIL_USER}>`,
+      to: 'kevyoliveira@hotmail.com', // Aqui vai o e-mail que RECEBERÁ a mensagem
       subject: `Nova mensagem de ${nome} (${empresa})`,
       html: `<p><strong>Nome:</strong> ${nome}</p>
              <p><strong>Empresa:</strong> ${empresa}</p>
