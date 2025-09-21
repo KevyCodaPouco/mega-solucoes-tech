@@ -1,5 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
-import nodemailer from "npm:nodemailer";
+import nodemailer from "https://esm.sh/nodemailer";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -21,6 +21,7 @@ serve(async (req) => {
 
     const { nome, empresa, email, mensagem } = await req.json();
 
+    // @ts-ignore
     const transporter = nodemailer.createTransport({
       hostname: "smtp.gmail.com",
       port: 587,
@@ -33,7 +34,7 @@ serve(async (req) => {
 
     const mailOptions = {
       from: `"${nome} - Formulário do Site" <${GMAIL_USER}>`,
-      to: 'kevyoliveira@hotmail.com', // Aqui vai o e-mail que RECEBERÁ a mensagem
+      to: 'k3vy0liveira@gmail.com',
       subject: `Nova mensagem de ${nome} (${empresa})`,
       html: `<p><strong>Nome:</strong> ${nome}</p>
              <p><strong>Empresa:</strong> ${empresa}</p>
@@ -42,6 +43,7 @@ serve(async (req) => {
       replyTo: email
     };
 
+    // @ts-ignore
     const info = await transporter.sendMail(mailOptions);
 
     return new Response(JSON.stringify(info), {
