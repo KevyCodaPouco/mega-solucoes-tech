@@ -29,13 +29,15 @@ const Solutions = () => {
     },
     {
       icon: Radio,
-      title: "Telecomunicações",
-      description: "Implementamos infraestrutura de telecom para garantir conectividade de alta performance e confiabilidade, seja por fibra óptica ou sistemas de rádio.",
+      title: "Infraestrutura de Telecomunicações",
+      description: "Desenvolvemos e implementamos sites de telefonia e infraestrutura completa para telecomunicações, garantindo cobertura, qualidade de sinal e conectividade robusta.",
       features: [
-        "Fibra óptica",
-        "Sistemas de rádio",
-        "Alta disponibilidade",
-        "Performance garantida"
+        "Sites de telefonia celular",
+        "Torres e estruturas de telecomunicações",
+        "Infraestrutura de rede móvel",
+        "Sites para operadoras de telecom",
+        "Sistemas de transmissão",
+        "Cobertura e qualidade de sinal"
       ]
     },
     {
