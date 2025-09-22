@@ -1,78 +1,56 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "Sistema de Automação Industrial",
-      category: "Manufatura",
-      images: [
-        "/api/placeholder/400/300",
-        "/api/placeholder/400/301",
-        "/api/placeholder/400/302"
-      ],
-      description: "Implementação de sistema automatizado para linha de produção"
-    },
-    {
-      id: 2,
-      title: "Rede de Telecomunicações Corporativa",
-      category: "Telecomunicações",
-      images: [
-        "/api/placeholder/400/300",
-        "/api/placeholder/400/301",
-        "/api/placeholder/400/302"
-      ],
-      description: "Infraestrutura completa de telecomunicações para empresa multinacional"
-    },
-    {
-      id: 3,
-      title: "Monitoramento de Temperatura em Data Center",
+      title: "Sistema de Monitoramento de Temperatura",
       category: "Monitoramento",
       images: [
         "/api/placeholder/400/300",
         "/api/placeholder/400/301",
         "/api/placeholder/400/302"
       ],
-      description: "Sistema de monitoramento em tempo real com alertas automatizados"
+      description: "Sistema de monitoramento em tempo real com alertas automatizados para ambientes críticos"
+    },
+    {
+      id: 2,
+      title: "Peças Funcionais em Impressão 3D",
+      category: "Impressão 3D",
+      images: [
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/301",
+        "/api/placeholder/400/302"
+      ],
+      description: "Peças funcionais customizadas e cases personalizados desenvolvidos através de impressão 3D"
+    },
+    {
+      id: 3,
+      title: "Protótipos de Equipamentos",
+      category: "Protótipos",
+      images: [
+        "/api/placeholder/400/300",
+        "/api/placeholder/400/301",
+        "/api/placeholder/400/302"
+      ],
+      description: "Desenvolvimento de protótipos funcionais para validação de conceitos e testes"
     },
     {
       id: 4,
-      title: "Solução IoT para Agricultura",
-      category: "Tecnologia",
+      title: "Infraestrutura de Sites de Telecomunicação",
+      category: "Telecomunicações",
       images: [
         "/api/placeholder/400/300",
         "/api/placeholder/400/301",
         "/api/placeholder/400/302"
       ],
-      description: "Sensores inteligentes para otimização de irrigação e cultivo"
-    },
-    {
-      id: 5,
-      title: "Equipamento de Teste Automatizado",
-      category: "Manufatura",
-      images: [
-        "/api/placeholder/400/300",
-        "/api/placeholder/400/301",
-        "/api/placeholder/400/302"
-      ],
-      description: "Desenvolvimento de equipamento personalizado para testes de qualidade"
-    },
-    {
-      id: 6,
-      title: "Sistema de Energia Solar Monitorado",
-      category: "Energia",
-      images: [
-        "/api/placeholder/400/300",
-        "/api/placeholder/400/301",
-        "/api/placeholder/400/302"
-      ],
-      description: "Instalação com sistema de monitoramento de performance em tempo real"
+      description: "Sites de telefonia celular e infraestrutura completa para operadoras de telecomunicações"
     }
   ];
 
-  const categories = ["Todos", "Manufatura", "Telecomunicações", "Monitoramento", "Tecnologia", "Energia"];
+  const categories = ["Todos", "Monitoramento", "Impressão 3D", "Protótipos", "Telecomunicações"];
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -127,8 +105,6 @@ const Portfolio = () => {
                         </CarouselItem>
                       ))}
                     </CarouselContent>
-                    <CarouselPrevious className="left-2" />
-                    <CarouselNext className="right-2" />
                   </Carousel>
                   <Badge 
                     className="absolute top-4 left-4 bg-primary text-primary-foreground z-10"
