@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Cpu, Network, Thermometer, Radio } from "lucide-react";
+import { ArrowRight, Cpu, Network, Thermometer, Radio, Box } from "lucide-react";
 
 const Solutions = () => {
   const solutions = [
@@ -38,6 +38,19 @@ const Solutions = () => {
         "Sites para operadoras de telecom",
         "Sistemas de transmissão",
         "Cobertura e qualidade de sinal"
+      ]
+    },
+    {
+      icon: Box,
+      title: "Modelagem 3D e Impressão",
+      description: "Criamos protótipos funcionais e peças sob medida através de modelagem 3D avançada e impressão 3D de alta precisão. Desenvolvemos desde cases personalizados até peças funcionais complexas.",
+      features: [
+        "Modelagem 3D para protótipos",
+        "Impressão 3D sob medida",
+        "Peças funcionais em 3D",
+        "Cases personalizados",
+        "Prototipagem rápida",
+        "Desenvolvimento de produtos"
       ]
     },
     {
