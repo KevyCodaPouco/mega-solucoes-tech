@@ -9,9 +9,10 @@ const Portfolio = () => {
       title: "Sistema de Monitoramento de Temperatura",
       category: "Monitoramento",
       images: [
-        "/api/placeholder/400/300",
-        "/api/placeholder/400/301",
-        "/api/placeholder/400/302"
+        "/images/portfolio/moni1.jpeg", // <-- Altere aqui
+        "/images/portfolio/moni2.jpeg", // <-- Altere aqui
+        "/images/portfolio/moni3.jpeg", // <-- E aqui
+        "/images/portfolio/moni4.jpeg"
       ],
       description: "Sistema de monitoramento em tempo real com alertas automatizados para ambientes críticos"
     },
@@ -20,9 +21,29 @@ const Portfolio = () => {
       title: "Peças Funcionais em Impressão 3D",
       category: "Impressão 3D",
       images: [
-        "/api/placeholder/400/300",
-        "/api/placeholder/400/301",
-        "/api/placeholder/400/302"
+        "/images/portfolio/3d1.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d2.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d3.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d4.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d5.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d6.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d7.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d8.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d9.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d10.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d11.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d12.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d13.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d14.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d15.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d16.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d17.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d18.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d19.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d20.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d21.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d22.jpeg", // <-- Altere aqui
+        "/images/portfolio/3d23.jpeg", // <-- Altere aqui
       ],
       description: "Peças funcionais customizadas e cases personalizados desenvolvidos através de impressão 3D"
     },
@@ -31,9 +52,17 @@ const Portfolio = () => {
       title: "Protótipos de Equipamentos",
       category: "Protótipos",
       images: [
-        "/api/placeholder/400/300",
-        "/api/placeholder/400/301",
-        "/api/placeholder/400/302"
+        "/images/portfolio/prop1.jpeg", // <-- Altere aqui
+        "/images/portfolio/prop2.jpeg", // <-- Altere aqui
+        "/images/portfolio/prop3.jpeg", // <-- Altere aqui
+        "/images/portfolio/prop4.jpeg", // <-- Altere aqui
+        "/images/portfolio/prop5.jpeg", // <-- Altere aqui
+        "/images/portfolio/prop6.jpeg", // <-- Altere aqui
+        "/images/portfolio/prop7.jpeg", // <-- Altere aqui
+        "/images/portfolio/prop8.jpeg", // <-- Altere aqui
+        "/images/portfolio/prop9.jpeg", // <-- Altere aqui
+        "/images/portfolio/prop10.jpeg", // <-- Altere aqui
+        "/images/portfolio/prop11.jpeg", // <-- Altere aqui
       ],
       description: "Desenvolvimento de protótipos funcionais para validação de conceitos e testes"
     },
@@ -42,9 +71,14 @@ const Portfolio = () => {
       title: "Infraestrutura de Sites de Telecomunicação",
       category: "Telecomunicações",
       images: [
-        "/api/placeholder/400/300",
-        "/api/placeholder/400/301",
-        "/api/placeholder/400/302"
+        "/images/portfolio/infra 1.jpeg", // <-- Altere aqui
+        "/images/portfolio/infra 2.jpeg", // <-- Altere aqui
+        "/images/portfolio/infra 3.jpeg", // <-- Altere aqui
+        "/images/portfolio/infra 4.jpeg", // <-- Altere aqui
+        "/images/portfolio/infra 5.jpeg", // <-- Altere aqui
+        "/images/portfolio/infra 6.jpeg", // <-- Altere aqui
+        "/images/portfolio/infra 7.jpeg", // <-- Altere aqui
+        "/images/portfolio/infra 8.jpeg", // <-- Altere aqui
       ],
       description: "Sites de telefonia celular e infraestrutura completa para operadoras de telecomunicações"
     }
