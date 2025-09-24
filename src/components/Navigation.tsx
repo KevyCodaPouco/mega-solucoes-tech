@@ -43,7 +43,7 @@ const Navigation = () => {
             ))}
             <div className="flex items-center gap-3">
               <Button variant="outline" size="sm" asChild className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                <a href="https://grafana.megasoluções.com/login target="_blank" rel="noopener noreferrer">
+               <a href="https://grafana.megasolucoes.com/login" target="_blank" rel="noopener noreferrer">
                   Área do Cliente
                 </a>
               </Button>
